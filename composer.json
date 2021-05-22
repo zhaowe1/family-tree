@@ -1,0 +1,12 @@
+{
+    "require": {
+        "catfan/medoo": "^2.0",
+        "symfony/var-dumper": "^5.2",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "FamilyTree\\": "src/"
+        }
+    }
+}
