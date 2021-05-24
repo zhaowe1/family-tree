@@ -2,6 +2,7 @@
 
 namespace FamilyTree;
 
+use FamilyTree\common\User;
 use Medoo\Medoo;
 
 class Model
@@ -43,12 +44,12 @@ class Model
     public static function initData()
     {
         return [
-            ['id' => 1, 'name' => '王大锤', 'sex' => 1, 'birthday' => '1990-01-01', 'f_id' => 3, 'm_id' => 4],
-            ['id' => 2, 'name' => '王尼美', 'sex' => 2, 'birthday' => '1990-02-01', 'f_id' => 3, 'm_id' => 4],
-            ['id' => 3, 'name' => '王建国', 'sex' => 1, 'birthday' => '1970-03-03', 'f_id' => 0, 'm_id' => 0],
-            ['id' => 4, 'name' => '李秀英', 'sex' => 2, 'birthday' => '1970-03-03', 'f_id' => 0, 'm_id' => 0],
-            ['id' => 5, 'name' => '赵铁柱', 'sex' => 1, 'birthday' => '2010-04-04', 'f_id' => 0, 'm_id' => 2],
-            ['id' => 6, 'name' => '王小明', 'sex' => 1, 'birthday' => '2010-05-05', 'f_id' => 1, 'm_id' => 0],
+            ['id' => 1, 'name' => '王大锤', 'sex' => User::MAN, 'birthday' => '1990-01-01', 'f_id' => 3, 'm_id' => 4],
+            ['id' => 2, 'name' => '王尼美', 'sex' => User::WOMAN, 'birthday' => '1990-02-01', 'f_id' => 3, 'm_id' => 4],
+            ['id' => 3, 'name' => '王建国', 'sex' => User::MAN, 'birthday' => '1970-03-03', 'f_id' => 0, 'm_id' => 0],
+            ['id' => 4, 'name' => '李秀英', 'sex' => User::WOMAN, 'birthday' => '1970-03-03', 'f_id' => 0, 'm_id' => 0],
+            ['id' => 5, 'name' => '赵铁柱', 'sex' => User::MAN, 'birthday' => '2010-04-04', 'f_id' => 0, 'm_id' => 2],
+            ['id' => 6, 'name' => '王小明', 'sex' => User::MAN, 'birthday' => '2010-05-05', 'f_id' => 1, 'm_id' => 0],
         ];
     }
 

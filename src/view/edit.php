@@ -24,12 +24,12 @@
         <div class="form-group">
             <label>性别</label>
             <div class="radio">
-                <?php if (!isset($currentUser['sex'])) { $currentUser['sex'] = 1; } ?>
+                <?php if (!isset($currentUser['sex'])) { $currentUser['sex'] = \FamilyTree\common\User::MAN; } ?>
                 <label>
-                    <input type="radio" name="sex" value="1" <?php echo $currentUser['sex'] ==1 ? 'checked' : '' ?>> 男
+                    <input type="radio" name="sex" value="1" <?php echo $currentUser['sex'] == \FamilyTree\common\User::MAN ? 'checked' : '' ?>> 男
                 </label>
                 <label>
-                    <input type="radio" name="sex" value="2" <?php echo $currentUser['sex'] ==2 ? 'checked' : '' ?>> 女
+                    <input type="radio" name="sex" value="2" <?php echo $currentUser['sex'] == \FamilyTree\common\User::WOMAN ? 'checked' : '' ?>> 女
                 </label>
             </div>
         </div>

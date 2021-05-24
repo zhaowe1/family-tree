@@ -6,7 +6,7 @@
 
 ### 如何使用
 
-1. 新建数据库 family_tree ，并导入初始化SQL数据 `family_tree`
+1. 新建数据库 family_tree ，并导入初始化SQL数据 `family_tree.sql`
 2. 修改 `src/Model.php` 中的数据库配置
 3. 使用PHP自带的Web服务运行
   ```

@@ -35,10 +35,10 @@ class Family
         // 添加父女关系
         if ($user->f_id != 0) {
             $this->graph[$user->id][$user->f_id] = 'f';
-            if ($user->sex == 1) {
+            if ($user->sex == User::MAN) {
                 $this->graph[$user->f_id][$user->id] = 's';
             }
-            if ($user->sex == 2) {
+            if ($user->sex == User::WOMAN) {
                 $this->graph[$user->f_id][$user->id] = 'd';
             }
         }
@@ -46,10 +46,10 @@ class Family
         // 添加母子关系
         if ($user->m_id != 0) {
             $this->graph[$user->id][$user->m_id] = 'm';
-            if ($user->sex == 1) {
+            if ($user->sex == User::MAN) {
                 $this->graph[$user->m_id][$user->id] = 's';
             }
-            if ($user->sex == 2) {
+            if ($user->sex == User::WOMAN) {
                 $this->graph[$user->m_id][$user->id] = 'd';
             }
         }
@@ -69,23 +69,23 @@ class Family
                         $jUser = $this->data[$brotherArr[$j]];
 
                         if (strtotime($iUser->birthday) <= strtotime($jUser->birthday)) {
-                            if ($iUser->sex == 1) {
+                            if ($iUser->sex == User::MAN) {
                                 $this->graph[$jUser->id][$iUser->id] = 'ob';
                             } else {
                                 $this->graph[$jUser->id][$iUser->id] = 'os';
                             }
-                            if ($jUser->sex == 1) {
+                            if ($jUser->sex == User::MAN) {
                                 $this->graph[$iUser->id][$jUser->id] = 'yb';
                             } else {
                                 $this->graph[$iUser->id][$jUser->id] = 'ys';
                             }
                         } else {
-                            if ($iUser->sex == 1) {
+                            if ($iUser->sex == User::MAN) {
                                 $this->graph[$jUser->id][$iUser->id] = 'yb';
                             } else {
                                 $this->graph[$jUser->id][$iUser->id] = 'ys';
                             }
-                            if ($jUser->sex == 1) {
+                            if ($jUser->sex == User::MAN) {
                                 $this->graph[$iUser->id][$jUser->id] = 'ob';
                             } else {
                                 $this->graph[$iUser->id][$jUser->id] = 'os';
@@ -186,7 +186,7 @@ class Family
                 'name' => $this->data[$id]->name . '[' . $this->data[$id]->id . ']',
                 'value' => $this->data[$id]->sex == User::MAN ? '男 ' . $this->data[$id]->birthday : '女 ' . $this->data[$id]->birthday,
                 'symbolSize' => 50,
-                'category' => $this->data[$id]->sex == 1 ? 0 : 1,
+                'category' => $this->data[$id]->sex == User::MAN ? 0 : 1,
             ];
             foreach ($edgeArr as $edgeId => $edgeR) {
                 $data['links'][] = [
