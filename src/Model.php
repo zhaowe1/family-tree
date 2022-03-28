@@ -12,11 +12,11 @@ class Model
     public static $config = [
         'database_type' => 'mysql',
         'database_name' => 'family_tree',
-        'server' => '127.0.0.1',
+        'server' => 'db',
         'username' => 'root',
         'password' => '123456',
         'charset' => 'utf8mb4',
-        'port' => 3305,
+        'port' => 3306,
     ];
 
     public static function DB()
